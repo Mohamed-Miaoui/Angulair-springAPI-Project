@@ -4,4 +4,12 @@ export class Universite {
     nomUniversite! : string;
 
     adresse! : string;
+
+    description! : string;
+
+    foundingDate! : string ;
+
+    campusSize! : number;
+
+    ranking! : number ;
 }

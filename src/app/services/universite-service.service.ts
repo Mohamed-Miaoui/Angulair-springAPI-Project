@@ -21,7 +21,7 @@ export class UniversiteServiceService {
     console.log("university service constructor ");
    }
    addUniversite(universite:Universite):Observable<Universite>{
-    return this._http.post<Universite>(this.universitesURL+"/addUniversite",universite);
+    return this._http.post<Universite>('http://localhost:8085/addUniversite',universite,httpOptions);
     }
    
    getAllUniversite():Observable<Universite[]>{
@@ -29,13 +29,13 @@ export class UniversiteServiceService {
    }
    
    getUniversite(id:number):Observable<Universite>{
-    return this._http.get<Universite>(this.universitesURL+"/Universties/"+id);
+    return this._http.get<Universite>(this.universitesURL+"/Universties/"+id,httpOptions);
     }
    
    updateUniversite(universite:Universite):Observable<Universite>{
-    return this._http.put<Universite>(this.universitesURL+"/updateU/"+universite.idUniversite,universite);
+    return this._http.put<Universite>(this.universitesURL+"/updateU",universite,httpOptions);
     }
-    deleteUniversite(universite:Universite):Observable<Universite>{
-      return this._http.delete<Universite>(this.universitesURL+"/deleteUni/"+universite.idUniversite);
+    deleteUniversite(idu:number):Observable<Universite>{
+      return this._http.delete<Universite>(this.universitesURL+"/deleteUni/"+idu,httpOptions);
      } 
 }

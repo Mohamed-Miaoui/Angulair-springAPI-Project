@@ -6,21 +6,24 @@ import { UniversiteServiceService } from 'src/app/services/universite-service.se
 @Component({
   selector: 'app-universities',
   templateUrl: './universities.component.html',
-  styleUrls: ['./universities.scss']
-  //styleUrls: ['./universities.component.css']
+  //styleUrls: ['./universities.scss']
+  styleUrls: ['./universities.component.css']
 })
 export class UniversitiesComponent {
 listUnis! : Universite[];
+
 constructor(private ac:ActivatedRoute, private uniServ:UniversiteServiceService){
   console.log("custructor");
 }
 ngOnInit(){
-  // this.list=this.us1.getAllUsers();
    this.uniServ.getAllUniversite().subscribe((res:Universite[])=>this.listUnis=res);
-   //console.log(this.ac.snapshot.params['category']);
- console.log("initiation ListUserComponent");
- //this.category=this.ac.snapshot.params['category'];
- //this.ac.paramMap.subscribe(res=>this.category=res.get('category'));
- 
+    console.log("initiation ListUserComponent");
  }
+
+ // binded to a delete button in Universities html , no component needed.
+ deleteUni(idu : number){
+  this.uniServ.deleteUniversite(idu).subscribe();
+  location.reload();
+ }
+ 
 }

@@ -1,35 +1,72 @@
-<div class="container">
-    <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
-    <ul class="responsive-table">
-      <li class="table-header">
-        <div class="col col-1">Id University</div>
-        <div class="col col-2">University name</div>
-        <div class="col col-3">Adresse</div>
-      </li>
-      <div *ngFor="let u of listUnis" >
-      <li class="table-row">
-        <div class="col col-1" data-label="uni Id">{{u.idUniversite}}</div>
-        <div class="col col-2" data-label="uni Name">{{u.nomUniversite}}</div>
-        <div class="col col-3" data-label="adresse">{{u.adresse}}</div>
-      </li>
-    </div>
-      <!-- <li class="table-row">
-        <div class="col col-1" data-label="Job Id">42442</div>
-        <div class="col col-2" data-label="Customer Name">Jennifer Smith</div>
-        <div class="col col-3" data-label="Amount">$220</div>
-        <div class="col col-4" data-label="Payment Status">Pending</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">42257</div>
-        <div class="col col-2" data-label="Customer Name">John Smith</div>
-        <div class="col col-3" data-label="Amount">$341</div>
-        <div class="col col-4" data-label="Payment Status">Pending</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">42311</div>
-        <div class="col col-2" data-label="Customer Name">John Carpenter</div>
-        <div class="col col-3" data-label="Amount">$115</div>
-        <div class="col col-4" data-label="Payment Status">Pending</div>
-      </li> -->
-    </ul>
-  </div>
+
+  <!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/377530a709.js" crossorigin="anonymous"></script>
+    
+    
+    
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Universities</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="../assets/img/search.png" alt="">
+            </div>
+            <!-- <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="../assets/img/search.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div> -->
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- <th> Id <span class="icon-arrow">&UpArrow;</span></th> -->
+                        <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Location <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> foundingDate <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> CampusSize <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Ranking <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Actions  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let u of listUnis">
+                        <!-- <td> {{u.idUniversite}} </td> -->
+                        <!-- <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Zinzu Chan Lee</td> -->
+                        <td> {{u.nomUniversite}} </td>
+                        <td> {{u.adresse}} </td>
+                        <td> {{u.foundingDate}} </td>
+                        <td> {{u.campusSize}} </td>
+                        <td> {{u.ranking}} </td>
+                        <td> 
+                            <button [routerLink]="['../edit', u.idUniversite]"> <img src="../assets/img/param.png" > </button> 
+                            <button  (click)="deleteUni(u.idUniversite)"> <img src="../assets/img/x.png" > </button>                       
+                        </td>
+                        <!-- <td>
+                            <p class="status delivered">Delivered</p>
+                        </td> -->
+                        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
