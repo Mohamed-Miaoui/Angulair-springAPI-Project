@@ -6,10 +6,11 @@ import { UniversitiesComponent } from './universities/universities.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddUniComponent } from './add-uni/add-uni.component';
 import { EdituniComponent } from './edituni/edituni.component';
+import { InfosComponent } from './infos/infos.component';
 
 
 @NgModule({
-  declarations: [UniversitiesComponent,AddUniComponent,EdituniComponent],
+  declarations: [UniversitiesComponent,AddUniComponent,EdituniComponent,InfosComponent],
   imports: [
     CommonModule,
     UniversityRoutingModule,

@@ -1,15 +1,15 @@
 export class Universite {
-    idUniversite! : number;
+    idUniversite : number;
 
-    nomUniversite! : string;
+    nomUniversite : string;
 
-    adresse! : string;
+    adresse : string;
 
-    description! : string;
+    description : string;
 
-    foundingDate! : string ;
+    foundingDate : string ;
 
-    campusSize! : number;
+    campusSize : number;
 
-    ranking! : number ;
+    ranking : number ;
 }

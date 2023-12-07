@@ -15,7 +15,6 @@ const httpOptions = {
 })
 export class UniversiteServiceService {
 
-
   universitesURL : string = "http://localhost:8085";
   constructor(private _http:HttpClient) {
     console.log("university service constructor ");

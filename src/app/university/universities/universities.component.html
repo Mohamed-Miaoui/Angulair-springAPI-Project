@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/377530a709.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
     
     
 </head>
 
 <body>
+       <div>
     <main class="table">
         <section class="table__header">
             <h1>Universities</h1>
@@ -46,7 +48,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr  *ngFor="let u of listUnis">
+                    <tr  *ngFor="let u of listUnis" >
                         <!-- <td> {{u.idUniversite}} </td> -->
                         <!-- <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Zinzu Chan Lee</td> -->
                         <td> {{u.nomUniversite}} </td>
@@ -56,17 +58,19 @@
                         <td> {{u.ranking}} </td>
                         <td> 
                             <button [routerLink]="['../edit', u.idUniversite]"> <img src="../assets/img/param.png" > </button> 
-                            <button  (click)="deleteUni(u.idUniversite)"> <img src="../assets/img/x.png" > </button>                       
+                            <!-- selectUniversity(u) to send u to ts and from ts to <app-infos [universityName]="selectedUniversityName" [university]="selectedUniversity"></app-infos> -->
+                            <button  (click)="deleteUni(u.idUniversite) "(click)="selectUniversity(u)"> <img src="../assets/img/x.png" > </button>                       
                         </td>
-                        <!-- <td>
-                            <p class="status delivered">Delivered</p>
-                        </td> -->
-                        
+                      
                     </tr>
                     
                 </tbody>
             </table>
         </section>
     </main>
+    <br>
+    <app-infos (undo)="recoverUniversity()" [universityName]="selectedUniversityName" [university]="selectedUniversity"></app-infos>
+</div>
+
 </body>
 </html>

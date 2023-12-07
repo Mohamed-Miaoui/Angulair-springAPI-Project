@@ -25,15 +25,15 @@
             </div>
               <br>
               <div *ngIf="UniverstyName.invalid" class="ng-invalid">
-                <div *ngIf="UniverstyName.errors!['required']">
+                <div *ngIf="UniverstyName.errors['required']">
                   Empty Field ! 
                 </div>
-                <div *ngIf="UniverstyName.errors!['minlength']">
-                min {{UniverstyName.errors!['minlength']['requiredLength']}} letters,
+                <div *ngIf="UniverstyName.errors['minlength']">
+                min {{UniverstyName.errors['minlength']['requiredLength']}} letters,
                 but you wrote only 
-                {{ UniverstyName.errors!['minlength']['actualLength'] }}
+                {{ UniverstyName.errors['minlength']['actualLength'] }}
                 </div>
-                <div *ngIf="UniverstyName.errors!['pattern']">
+                <div *ngIf="UniverstyName.errors['pattern']">
                     Only letters are required !
                 </div>
                 </div>
@@ -48,13 +48,13 @@
             </div>
             <br>
               <div *ngIf="adresse.invalid" class="ng-invalid">
-                <div *ngIf="adresse.errors!['required']">
+                <div *ngIf="adresse.errors['required']">
                   Empty Field ! 
                 </div>
-                <div *ngIf="adresse.errors!['minlength']">
-                  min {{adresse.errors!['minlength']['requiredLength']}} letters,
+                <div *ngIf="adresse.errors['minlength']">
+                  min {{adresse.errors['minlength']['requiredLength']}} letters,
                   but you wrote only  
-                {{ adresse.errors!['minlength']['actualLength'] }}
+                {{ adresse.errors['minlength']['actualLength'] }}
                 </div>
                 </div>
                 <br>
@@ -69,13 +69,13 @@
             </div>
               <br>
               <div *ngIf="desc.invalid" class="ng-invalid">
-                <div *ngIf="desc.errors!['required']">
+                <div *ngIf="desc.errors['required']">
                   Empty Field ! 
                 </div>
-                <div *ngIf="desc.errors!['minlength']">
-                  min {{desc.errors!['minlength']['requiredLength']}} letters,
+                <div *ngIf="desc.errors['minlength']">
+                  min {{desc.errors['minlength']['requiredLength']}} letters,
                   but you wrote only  
-                {{ desc.errors!['minlength']['actualLength'] }}
+                {{ desc.errors['minlength']['actualLength'] }}
                 </div>
                 </div>
                 <br>
@@ -90,13 +90,13 @@
             </div>
             <br>
               <div *ngIf="found.invalid" class="ng-invalid" >
-                <div *ngIf="found.errors!['required']">
+                <div *ngIf="found.errors['required']">
                   Empty Field ! 
                 </div>
-                <div *ngIf="found.errors!['minlength']">
-                  min {{found.errors!['minlength']['requiredLength']}} letters,
+                <div *ngIf="found.errors['minlength']">
+                  min {{found.errors['minlength']['requiredLength']}} letters,
                   but you wrote only 
-                {{ found.errors!['minlength']['actualLength'] }}
+                {{ found.errors['minlength']['actualLength'] }}
                 </div>
                 </div>
                 <br>
@@ -104,13 +104,13 @@
             <div class="formbold-input-flex" >
               <div>
               <label  class="formbold-form-label">Compus Size</label>
-              <input class="formbold-form-input" name="size" type="number" [(ngModel)]="uniSelected.campusSize" #size="ngModel" pattern="^[1-9]*$" required/>
+              <input class="formbold-form-input" name="size" type="number" [(ngModel)]="uniSelected.campusSize" #size="ngModel" pattern="^[0-9]*$" required/>
             </div>
             <div>
               <label class="formbold-form-label">
                 Ranking
               </label>
-              <input class="formbold-form-input" name="ran" type="number" [(ngModel)]="uniSelected.ranking" #ran="ngModel" pattern="^[1-9]*$"  required/>
+              <input class="formbold-form-input" name="ran" type="number" [(ngModel)]="uniSelected.ranking" #ran="ngModel" pattern="^[0-9]*$"  required/>
             </div> 
           </div>
     

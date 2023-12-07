@@ -4,29 +4,24 @@ import { Universite } from 'src/app/models/universite';
 import { UniversiteServiceService } from 'src/app/services/universite-service.service';
 
 @Component({
-  selector: 'app-add-uni',
-  templateUrl: './add-uni.component.html',
-  styleUrls: ['./add-uni.component.css']
-  
+  selector: 'app-infos',
+  templateUrl: './infos.component.html',
+  styleUrls: ['./infos.component.scss']
 })
-export class AddUniComponent {
-  university :Universite =new Universite();
-  
-  
-  
+export class InfosComponent {
 
   constructor(private ac: ActivatedRoute,private us:UniversiteServiceService){
   }
-  ngOnInit(){
 
+  @Input() university:Universite;
+  @Input() universityName:String;
+
+
+  @Output() undo = new EventEmitter<string>();
+  recover(){
+    this.undo.emit("university recovered sucessfully");
+    alert("university recovered sucessfully ! ")
   }
-  addUniversity(){
-    console.log("pressed on add")
-  this.us.addUniversite(this.university).subscribe();
   
-  }
-  test(err: any){
-    console.log(err);
-  }
 
 }
